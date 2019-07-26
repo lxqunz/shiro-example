@@ -37,7 +37,27 @@ public abstract class BaseTest {
     protected User u4;
 
     @Before
+    public void setUp2() {
+        //1、新增权限
+        p1 = new Permission("user:create", "用户模块新增", Boolean.TRUE);
+        p2 = new Permission("user:update", "用户模块修改", Boolean.TRUE);
+        p3 = new Permission("menu:create", "菜单模块新增", Boolean.TRUE);
+
+        //2、新增角色
+        r1 = new Role("admin", "管理员", Boolean.TRUE);
+        r2 = new Role("user", "用户管理员", Boolean.TRUE);
+
+        //4、新增用户
+        u1 = new User("zhang", password);
+        u2 = new User("li", password);
+        u3 = new User("wu", password);
+        u4 = new User("wang", password);
+    }
+
+    /*
+    @Before
     public void setUp() {
+
         JdbcTemplateUtils.jdbcTemplate().update("delete from sys_users");
         JdbcTemplateUtils.jdbcTemplate().update("delete from sys_roles");
         JdbcTemplateUtils.jdbcTemplate().update("delete from sys_permissions");
@@ -79,7 +99,7 @@ public abstract class BaseTest {
         userService.correlationRoles(u1.getId(), r1.getId());
 
     }
-
+*/
 
 
 

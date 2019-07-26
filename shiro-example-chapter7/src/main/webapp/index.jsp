@@ -10,5 +10,7 @@
 <a href="${pageContext.request.contextPath}/role">角色授权</a><br/>
 <a href="${pageContext.request.contextPath}/permission">权限授权</a><br/>
 
+<a href="${pageContext.request.contextPath}/advertisement">advertisement</a><br/>
+
 </body>
 </html>
