@@ -24,11 +24,11 @@ public class ClientTest {
     private static Server server;
     private RestTemplate restTemplate = new RestTemplate();
 
-
+/*
     @BeforeClass
     public static void beforeClass() throws Exception {
         //创建一个server
-        server = new Server(8080);
+        server = new Server(8090);
         WebAppContext context = new WebAppContext();
         String webapp = "shiro-example-chapter20/src/main/webapp";
         context.setDescriptor(webapp + "/WEB-INF/web.xml");  //指定web.xml配置文件
@@ -39,7 +39,7 @@ public class ClientTest {
         server.setHandler(context);
         server.start();
     }
-
+*/
     @Test
     public void testServiceHelloSuccess() {
         String username = "admin";
@@ -49,13 +49,13 @@ public class ClientTest {
         String key = "dadadswdewq2ewdwqdwadsadasd";
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         params.add(Constants.PARAM_USERNAME, username);
-        params.add("param1", param11);
-        params.add("param1", param12);
-        params.add("param2", param2);
+//        params.add("param1", param11);
+//        params.add("param1", param12);
+//        params.add("param2", param2);
         params.add(Constants.PARAM_DIGEST, HmacSHA256Utils.digest(key, params));
 
         String url = UriComponentsBuilder
-                .fromHttpUrl("http://localhost:8080/hello")
+                .fromHttpUrl("http://localhost:8090/chapter20/hello")
                 .queryParams(params).build().toUriString();
 
         ResponseEntity responseEntity = restTemplate.getForEntity(url, String.class);
@@ -78,7 +78,7 @@ public class ClientTest {
         params.set("param2", param2 + "1");
 
         String url = UriComponentsBuilder
-                .fromHttpUrl("http://localhost:8080/hello")
+                .fromHttpUrl("http://localhost:8090/chapter20/hello")
                 .queryParams(params).build().toUriString();
 
         try {
@@ -88,9 +88,10 @@ public class ClientTest {
             Assert.assertEquals("login error", e.getResponseBodyAsString());
         }
     }
-
+/*
     @AfterClass
     public static void afterClass() throws Exception {
         server.stop(); //当测试结束时停止服务器
     }
+    */
 }

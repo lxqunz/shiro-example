@@ -8,8 +8,8 @@
 
 <div class="error">${error}</div>
 <form action="" method="post">
-    用户名：<input type="text" name="username"><br/>
-    密码：<input type="password" name="password"><br/>
+    用户名：<input type="text" name="username1"><br/>
+    密码：<input type="password" name="password1"><br/>
     <input type="submit" value="登录">
 </form>
 

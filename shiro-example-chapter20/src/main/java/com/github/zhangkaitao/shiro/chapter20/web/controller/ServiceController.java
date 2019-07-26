@@ -15,4 +15,10 @@ public class ServiceController {
     public String hello1(String[] param1, String param2) {
         return "hello" + param1[0] + param1[1] + param2;
     }
+
+    @RequestMapping("/hello")
+    public String hello1() {
+        return "hello";
+    }
+
 }

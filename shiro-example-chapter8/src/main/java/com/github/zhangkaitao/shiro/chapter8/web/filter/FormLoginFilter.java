@@ -53,8 +53,8 @@ public class FormLoginFilter extends PathMatchingFilter {
     }
 
     private boolean login(HttpServletRequest req) {
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String username = req.getParameter("username1");
+        String password = req.getParameter("password1");
         try {
             SecurityUtils.getSubject().login(new UsernamePasswordToken(username, password));
         } catch (Exception e) {

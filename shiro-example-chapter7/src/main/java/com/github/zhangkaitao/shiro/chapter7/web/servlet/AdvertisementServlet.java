@@ -10,22 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-29
- * <p>Version: 1.0
- */
-@WebServlet(name = "roleServlet", urlPatterns = "/role")
-public class RoleServlet extends HttpServlet {
-
+@WebServlet(name = "advertisementServlet", urlPatterns = "/advertisement")
+public class AdvertisementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Subject subject = SecurityUtils.getSubject();
-        if(!subject.hasRole("adminP")){
-            req.getRequestDispatcher("/WEB-INF/jsp/unauthorized.jsp").forward(req, resp);
-            return ;
-        }
-        subject.checkRole("adminP");
-        req.getRequestDispatcher("/WEB-INF/jsp/hasRole.jsp").forward(req, resp);
+
+        req.getRequestDispatcher("/WEB-INF/jsp/advertisement.jsp").forward(req, resp);
+
     }
 }

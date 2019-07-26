@@ -133,8 +133,11 @@
                 <version>8.1.8.v20121106</version>
                 <configuration>
                     <webAppConfig>
+
                         <contextPath>/${project.build.finalName}</contextPath>
+
                     </webAppConfig>
+
                 </configuration>
             </plugin>
 

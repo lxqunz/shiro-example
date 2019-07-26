@@ -24,4 +24,16 @@ public class AnnotationController {
     public String hello2() {
         return "success";
     }
+
+    @RequestMapping("/hello3")
+    public String hello3() {
+        SecurityUtils.getSubject().checkRole("user");
+        return "success";
+    }
+
+    @RequestMapping("/hello4")
+    public String hello4() {
+        return "success";
+    }
+
 }

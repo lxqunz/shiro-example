@@ -78,7 +78,7 @@
             <version>0.2.23</version>
         </dependency>
 
-        <dependency>
+        <!--dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
@@ -88,7 +88,7 @@
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.2</version>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -155,11 +155,11 @@
                     </webAppConfig>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>9080</port>
+                            <port>8090</port>
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                         <connector implementation="org.eclipse.jetty.server.ssl.SslSocketConnector">
-                            <port>9443</port>
+                            <port>8443</port>
                             <maxIdleTime>60000</maxIdleTime>
                             <keystore>${project.basedir}/localhost.keystore</keystore>
                             <password>123456</password>

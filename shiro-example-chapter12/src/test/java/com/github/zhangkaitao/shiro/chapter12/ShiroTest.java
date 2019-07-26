@@ -115,13 +115,13 @@ public class ShiroTest {
         Assert.assertTrue(subject.isAuthenticated());
         subject.checkRole("admin");
         subject.checkPermission("user:create");
-
+/*
         userService.changePassword(u1.getId(), password + "1");
         userRealm.clearCache(subject.getPrincipals());
 
         token = new UsernamePasswordToken(u1.getUsername(), password + "1");
         subject.login(token);
-
+*/
 
 
 
